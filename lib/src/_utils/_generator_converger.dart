@@ -1,0 +1,62 @@
+//.title
+// ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+//
+// 🇽🇾🇿 & Dev
+//
+// Licencing details are in the LICENSE file in the root directory.
+//
+// ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+//.title~
+
+import 'package:df_gen_core/df_gen_core.dart' as gen;
+import 'package:df_gen_core/src/io.dart';
+import 'package:df_log/df_log.dart';
+import 'package:path/path.dart' as p;
+import 'package:df_config/df_config.dart';
+
+import '_insight_mappers.dart';
+
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+final generatorConverger = _GeneratorConverger(
+  (replacements, templates) async {
+    for (final template in templates) {
+      // Extract the content from the template.
+      final templateContent = gen.extractCodeFromMarkdown(template.content);
+
+      for (final replacement in replacements) {
+        final dir = replacement.insight.dir;
+        final dirPath = dir.path;
+
+        // Fill the template with the replacement data.
+        final output = replaceData(
+          templateContent,
+          replacement.replacements,
+        );
+
+        // Determine the output file name.
+        final outputFileName = [
+          '_index',
+          if (templates.length > 1) ...[
+            '_',
+            template.rootName,
+          ],
+          '.g.dart',
+        ].join();
+        final outputFilePath = p.join(dirPath, outputFileName);
+
+        // Write the content to the file.
+        await writeFile(
+          outputFilePath,
+          output,
+        );
+
+        debugLogSuccess('Generated "${gen.previewPath(outputFilePath)}"');
+      }
+    }
+  },
+);
+
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+typedef _GeneratorConverger = gen.GeneratorConverger<gen.DirInsight, Placeholders>;

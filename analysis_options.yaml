@@ -1,0 +1,37 @@
+##.title
+## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+##
+## Dart/Flutter (DF) Packages by DevCetra.com & contributors. ee MIT LICENSE
+## file in the root directory.
+##
+## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+##.title~
+
+include: package:lints/recommended.yaml
+
+## ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+linter:
+  rules:
+    always_declare_return_types: true
+    avoid_renaming_method_parameters: false
+    constant_identifier_names: false
+    non_constant_identifier_names: false
+    omit_local_variable_types: true
+    prefer_const_constructors_in_immutables: true
+    prefer_const_constructors: true
+    prefer_final_fields: true
+    prefer_relative_imports: true
+    prefer_single_quotes: true
+    require_trailing_commas: true
+    unnecessary_this: false
+    camel_case_types: false
+
+analyzer:
+  exclude:
+    - build/**
+    #- '**/*.g.dart'
+  errors:
+    prefer_final_in_for_each: error
+    unnecessary_new: error
+    unrelated_type_equality_checks: error
