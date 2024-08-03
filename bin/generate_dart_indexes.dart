@@ -19,8 +19,6 @@ void main(List<String> args) async {
   DebugLog.debugOnly = false;
   final currentDir = Directory.current.path;
   await runGenerateIndexFilesForDartApp([
-    '-t',
-    '$currentScriptDir/templates/',
     '-r',
     currentDir,
     ...args,

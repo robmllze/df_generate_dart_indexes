@@ -61,7 +61,7 @@ Future<void> runGenerateIndexFilesForDartApp(List<String> args) async {
     },
     action: (parser, results, args) async {
       await generateIndexFilesForDart(
-        templatesRootDirPaths: args.templatesRootDirPaths!,
+        templatesRootDirPaths: {}, // templates not used atm
         rootDirPaths: args.rootPaths!,
         subDirPaths: args.subPaths ?? const {},
         pathPatterns: args.pathPatterns ?? const {},
