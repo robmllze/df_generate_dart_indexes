@@ -41,6 +41,7 @@ dev_dependencies:
 
 executables:
   generate_dart_indexes: generate_dart_indexes
+  dfgeni: generate_dart_indexes
 
 ## -----------------------------------------------------------------------------
 

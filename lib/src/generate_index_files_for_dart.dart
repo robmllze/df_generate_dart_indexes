@@ -54,7 +54,7 @@ Future<void> generateIndexFilesForDart({
     filePath: 'templates/template.dart.md',
   );
 
-  printYellow(template);
+  printRed(template);
 
   // Extract insights from the dir path results.
   final dirInsights =

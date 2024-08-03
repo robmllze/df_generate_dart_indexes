@@ -13,32 +13,17 @@ import 'package:df_log/df_log.dart';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-// To-Do: List the folders and their subfolders to generate exports for.
-
-const folders = <String>{
-  'df_generate_dart_indexes',
-};
-
-const subfolders = <String>{
-  'lib',
-};
-
-// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-//
-// DO NOT MODIFY BELOW
-//
-// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-
 void main(List<String> args) async {
   DebugLog.debugOnly = false;
   printYellow(currentScriptDir);
   await runGenerateIndexFilesForDartApp([
     '-t',
     '$currentScriptDir/templates/',
+    '-r',
+    [
+      '"\$(pwd)"',
+      '"%cd%"',
+    ].join('&&'),
     ...args,
-    // folders.map((e) => '$currentScriptDir/../../${e.isNotEmpty ? '$e/' : ''}').join('&'),
-    // '-s',
-    // subfolders.join('&'),
-    // ...args,
   ]);
 }
