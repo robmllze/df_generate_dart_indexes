@@ -51,8 +51,10 @@ Future<void> generateIndexFilesForDart({
   final template = await loadFileFromGitHub(
     username: 'robmllze',
     repo: 'df_generate_dart_indexes',
-    filePath: 'bin/templates',
+    filePath: 'templates/template.dart.md',
   );
+
+  printYellow(template);
 
   // Extract insights from the dir path results.
   final dirInsights =
