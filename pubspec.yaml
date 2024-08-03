@@ -35,4 +35,4 @@ dev_dependencies:
 ## -----------------------------------------------------------------------------
 
 executables:
-  generate_dart_indexes: bin/generate_dart_indexes.dart
+  generate_dart_indexes: generate_dart_indexes
