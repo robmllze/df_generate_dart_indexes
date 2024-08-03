@@ -1,4 +1,4 @@
-# Dart Package Template
+# DF Generate Dart Indexes
 
 Dart & Flutter Packages by DevCetra.com & contributors.
 
@@ -9,16 +9,18 @@ Dart & Flutter Packages by DevCetra.com & contributors.
 
 ## Summary
 
-<!-- Write here what this package can do in a nutshell-->
+A tool to generate index/exports files for all Dart files in a directory.
 
 ## Usage Example
 
-For a full feature set, please refer to the [API reference](https://pub.dev/documentation/df_generate_dart_indexes/).
+1. You do not need to add this package to your pubspec.yaml file.
+2. Activate the tool by running: `dart pub global activate df_generate_dart_indexes`.
+3. Navigate to a folder in your project using the terminal (Tip: If you're using VS Code, you can right-click on a folder and select `"Open in Integrated Terminal"`).
+4. Run `dartindexes .` to generate an `_index.g.dart` file at the current location `.`.
 
-## Installation
+### Note
 
-Use this package as a dependency by adding it to your `pubspec.yaml` file (see [here](https://pub.dev/packages/df_generate_dart_indexes/install)).
-
+Files that start with an underscore, files in folders that start with an underscore, and generated files (those with the `.g.dart` extension) will be omitted from `_index.g.dart`.
 ---
 
 ## Contributing and Discussions
