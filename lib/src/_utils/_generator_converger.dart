@@ -22,7 +22,7 @@ final generatorConverger = _GeneratorConverger(
   (replacements, templates) async {
     for (final template in templates) {
       // Extract the content from the template.
-      final templateContent = gen.extractCodeFromMarkdown(template.content);
+      final templateContent = gen.extractCodeFromMarkdown(template);
 
       for (final replacement in replacements) {
         final dir = replacement.insight.dir;
@@ -37,10 +37,6 @@ final generatorConverger = _GeneratorConverger(
         // Determine the output file name.
         final outputFileName = [
           '_index',
-          if (templates.length > 1) ...[
-            '_',
-            template.rootName,
-          ],
           '.g.dart',
         ].join();
         final outputFilePath = p.join(dirPath, outputFileName);
@@ -59,4 +55,4 @@ final generatorConverger = _GeneratorConverger(
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-typedef _GeneratorConverger = gen.GeneratorConverger<gen.DirInsight, Placeholders>;
+typedef _GeneratorConverger = gen.GeneratorConverger<gen.DirInsight, Placeholders, String>;

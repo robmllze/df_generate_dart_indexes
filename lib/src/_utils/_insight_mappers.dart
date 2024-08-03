@@ -68,4 +68,4 @@ enum Placeholders {
 
 typedef _InsightMapper = gen.InsightMapper<gen.DirInsight, Placeholders>;
 
-typedef GeneratorConverger = gen.GeneratorConverger<_InsightMapper, Placeholders>;
+typedef GeneratorConverger = gen.GeneratorConverger<_InsightMapper, Placeholders, String>;

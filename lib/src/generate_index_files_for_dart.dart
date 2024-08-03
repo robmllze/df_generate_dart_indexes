@@ -8,7 +8,10 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
+import 'dart:convert';
+
 import 'package:df_gen_core/df_gen_core.dart' as gen;
+import 'package:df_gen_core/df_gen_core.dart';
 import 'package:df_log/df_log.dart';
 
 import '_utils/_generator_converger.dart';
@@ -45,20 +48,11 @@ Future<void> generateIndexFilesForDart({
   );
   final sourceFileExplorerResults = await sourceFileExporer.explore();
 
-  // Read all templates from templatesRootDirPaths.
-  final templateFileExporer = gen.PathExplorer(
-    dirPathGroups: {
-      gen.CombinedPaths(
-        templatesRootDirPaths,
-      ),
-    },
+  final template = await loadFileFromGitHub(
+    username: 'robmllze',
+    repo: 'df_generate_dart_indexes',
+    filePath: 'bin/templates',
   );
-  final r = await templateFileExporer.explore();
-  printGreen(templatesRootDirPaths);
-  printRed(r.filePathResults.map((e) => e.path));
-  final templates = await templateFileExporer.readAll();
-
-  print(templates.map((e) => e.content));
 
   // Extract insights from the dir path results.
   final dirInsights =
@@ -67,7 +61,7 @@ Future<void> generateIndexFilesForDart({
   // Converge what was gathered to generate the output.
   await generatorConverger.converge(
     dirInsights,
-    templates,
+    [template],
     insightMappers,
   );
 
