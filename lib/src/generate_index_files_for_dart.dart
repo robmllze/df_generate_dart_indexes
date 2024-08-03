@@ -45,9 +45,6 @@ Future<void> generateIndexFilesForDart({
   );
   final sourceFileExplorerResults = await sourceFileExporer.explore();
 
-  print(sourceFileExplorerResults.dirPathResults.map((e) => e.files.map((e) => e.path)));
-  print(sourceFileExplorerResults.filePathResults.length);
-
   // Read all templates from templatesRootDirPaths.
   final templateFileExporer = gen.PathExplorer(
     dirPathGroups: {
@@ -56,6 +53,8 @@ Future<void> generateIndexFilesForDart({
       ),
     },
   );
+  final r = await templateFileExporer.explore();
+  printRed(r.filePathResults.map((e) => e.path));
   final templates = await templateFileExporer.readAll();
 
   print(templates.map((e) => e.content));
