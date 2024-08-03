@@ -29,7 +29,6 @@ const subfolders = <String>{
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 void main(List<String> args) async {
-  print(args);
   await runGenerateIndexFilesForDartApp([
     '-t',
     '$currentScriptDir/templates/',

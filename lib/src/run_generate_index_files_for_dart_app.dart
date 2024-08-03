@@ -19,7 +19,6 @@ import 'generate_index_files_for_dart.dart';
 /// A command line app for generating index files for Dart from directories.
 /// The [args] are interpreted and passed to [generateIndexFilesForDart].
 Future<void> runGenerateIndexFilesForDartApp(List<String> args) async {
-  print(args);
   await gen.runCommandLineApp(
     title: 'Generate Dart Indexes',
     description: 'A command line app for generating Dart index files for the provided directories.',
@@ -61,6 +60,7 @@ Future<void> runGenerateIndexFilesForDartApp(List<String> args) async {
       );
     },
     action: (parser, results, args) async {
+      print(args);
       await generateIndexFilesForDart(
         templatesRootDirPaths: args.templatesRootDirPaths!,
         rootDirPaths: args.rootPaths!,
