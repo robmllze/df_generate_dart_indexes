@@ -15,12 +15,13 @@ import 'package:df_log/df_log.dart';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-void main(/*List<String> args*/) async {
+void main(List<String> args) async {
   DebugLog.debugOnly = false;
   final currentDir = Directory.current.path;
   await runGenerateIndexFilesForDartApp([
     '-r',
     currentDir,
-    //...args,
+    '-s',
+    args.first,
   ]);
 }
