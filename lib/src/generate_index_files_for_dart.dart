@@ -8,8 +8,6 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
-import 'dart:convert';
-
 import 'package:df_gen_core/df_gen_core.dart' as gen;
 import 'package:df_gen_core/df_gen_core.dart';
 import 'package:df_log/df_log.dart';
@@ -53,8 +51,6 @@ Future<void> generateIndexFilesForDart({
     repo: 'df_generate_dart_indexes',
     filePath: 'templates/template.dart.md',
   );
-
-  printRed(template);
 
   // Extract insights from the dir path results.
   final dirInsights =

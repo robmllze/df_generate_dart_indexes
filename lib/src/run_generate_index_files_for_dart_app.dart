@@ -102,7 +102,7 @@ class _ArgsChecker extends gen.ValidArgsChecker {
 
   @override
   List get args => [
-        this.templatesRootDirPaths,
+        //this.templatesRootDirPaths, // templates not used atm
         this.rootPaths,
         if (this.subPaths != null) this.subPaths,
         if (this.pathPatterns != null) this.pathPatterns,
