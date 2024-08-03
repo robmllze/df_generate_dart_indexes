@@ -56,7 +56,7 @@ Future<void> runGenerateIndexFilesForDartApp(List<String> args) async {
         rootPaths: results['roots'],
         subPaths: results['subs'],
         pathPatterns: results['patterns'],
-        templateFilePaths: results['templates'],
+        templatesRootDirPaths: results['templates'],
       );
     },
     action: (parser, results, args) async {
@@ -87,11 +87,11 @@ class _ArgsChecker extends gen.ValidArgsChecker {
   //
 
   _ArgsChecker({
-    required dynamic templateFilePaths,
+    required dynamic templatesRootDirPaths,
     required dynamic rootPaths,
     required dynamic subPaths,
     required dynamic pathPatterns,
-  })  : this.templatesRootDirPaths = gen.splitArg(templateFilePaths)?.toSet(),
+  })  : this.templatesRootDirPaths = gen.splitArg(templatesRootDirPaths)?.toSet(),
         this.rootPaths = gen.splitArg(rootPaths)?.toSet(),
         this.subPaths = gen.splitArg(subPaths)?.toSet(),
         this.pathPatterns = gen.splitArg(pathPatterns)?.toSet();

@@ -54,6 +54,7 @@ Future<void> generateIndexFilesForDart({
     },
   );
   final r = await templateFileExporer.explore();
+  printGreen(templatesRootDirPaths);
   printRed(r.filePathResults.map((e) => e.path));
   final templates = await templateFileExporer.readAll();
 

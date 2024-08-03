@@ -31,6 +31,7 @@ const subfolders = <String>{
 
 void main(List<String> args) async {
   DebugLog.debugOnly = false;
+  printYellow(currentScriptDir);
   await runGenerateIndexFilesForDartApp([
     '-t',
     '$currentScriptDir/templates/',
