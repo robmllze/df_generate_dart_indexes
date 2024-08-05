@@ -38,7 +38,7 @@ void main(List<String> args) {
     );
   }
   contents = '# Changelog\n\n${(sections.toList()..sort((a, b) {
-      return b.releasedAt.compareTo(a.releasedAt);
+      return b.version.compareTo(a.version);
     })).map((e) => e.toString()).join('\n')}';
 
   file.writeAsStringSync(contents);
