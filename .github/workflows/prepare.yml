@@ -1,16 +1,15 @@
 ##.title
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##
-## Dart/Flutter (DF) Packages by DevCetra.com & contributors.
-##
-## See MIT LICENSE file in the root directory.
+## Dart/Flutter (DF) Packages by DevCetra.com & contributors. ee LICENSE file
+## in root directory.
 ##
 ## For more about publishing, see: https://dart.dev/tools/pub/automated-publishing
 ##
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##.title~
 
-name: Prepare for release
+name: Prepare version
 
 ## -----------------------------------------------------------------------------
 
@@ -22,7 +21,7 @@ on:
 ## -----------------------------------------------------------------------------
 
 jobs:
-  update-changelog:
+  prepare:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -30,6 +29,9 @@ jobs:
 
       - name: Set up Dart
         uses: dart-lang/setup-dart@v1.2
+
+      - name: Upgrade dependencies
+        run: dart pub upgrade --tighten
 
       - name: Format Dart code
         run: dart format .
@@ -54,12 +56,11 @@ jobs:
         run: |
           RELEASE_NOTES="${{ steps.get_commits.outputs.messages }}"
           dart run .github/scripts/update_changelog.dart "${{ steps.get_version.outputs.extracted_version }}" "$RELEASE_NOTES"
-        shell: bash
 
       - name: Commit and push changes
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m "Prepare release for version ${{ steps.get_version.outputs.extracted_version }}"
+          git commit -m "Prepare version ${{ steps.get_version.outputs.extracted_version }}"
           git push
