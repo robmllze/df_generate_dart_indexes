@@ -30,7 +30,9 @@ final insightMappers = [
     placeholder: Placeholders.PRIVATE_EXPORTS,
     mapInsights: (insight) async => _mapper(
       insight,
-      (e) => e.startsWith('_') || e.contains('${p.separator}_') && !e.endsWith('.g.dart'),
+      (e) =>
+          e.startsWith('_') ||
+          e.contains('${p.separator}_') && !e.endsWith('.g.dart'),
       (e) => "// export '$e';",
     ),
   ),
@@ -38,7 +40,10 @@ final insightMappers = [
     placeholder: Placeholders.GENERATED_EXPORTS,
     mapInsights: (insight) async => _mapper(
       insight,
-      (e) => !e.startsWith('_') && !e.contains('${p.separator}_') && e.endsWith('.g.dart'),
+      (e) =>
+          !e.startsWith('_') &&
+          !e.contains('${p.separator}_') &&
+          e.endsWith('.g.dart'),
       (e) => "// export '$e';",
     ),
   ),
@@ -52,7 +57,8 @@ String _mapper(
   String Function(String baseName) statementBuilder,
 ) {
   final dir = insight.dir;
-  final filePaths = dir.getSubFiles().map((e) => p.relative(e.path, from: dir.path));
+  final filePaths =
+      dir.getSubFiles().map((e) => p.relative(e.path, from: dir.path));
   final exportFilePaths = filePaths.where((e) => test(e));
   if (exportFilePaths.isNotEmpty) {
     final statements = exportFilePaths.map(statementBuilder);
@@ -70,4 +76,5 @@ enum Placeholders {
 
 typedef _InsightMapper = gen.InsightMapper<gen.DirInsight, Placeholders>;
 
-typedef GeneratorConverger = gen.GeneratorConverger<_InsightMapper, Placeholders, String>;
+typedef GeneratorConverger
+    = gen.GeneratorConverger<_InsightMapper, Placeholders, String>;
