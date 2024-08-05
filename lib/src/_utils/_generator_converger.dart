@@ -7,12 +7,10 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
+import 'package:df_config/df_config.dart';
 import 'package:df_gen_core/df_gen_core.dart' as gen;
-// ignore: implementation_imports
-import 'package:df_gen_core/src/io.dart';
 import 'package:df_log/df_log.dart';
 import 'package:path/path.dart' as p;
-import 'package:df_config/df_config.dart';
 
 import '_insight_mappers.dart';
 
@@ -42,7 +40,7 @@ final generatorConverger = _GeneratorConverger(
         final outputFilePath = p.join(dirPath, outputFileName);
 
         // Write the content to the file.
-        await writeFile(
+        await gen.writeFile(
           outputFilePath,
           output,
         );
@@ -55,5 +53,4 @@ final generatorConverger = _GeneratorConverger(
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-typedef _GeneratorConverger
-    = gen.GeneratorConverger<gen.DirInsight, Placeholders, String>;
+typedef _GeneratorConverger = gen.GeneratorConverger<gen.DirInsight, Placeholders, String>;
