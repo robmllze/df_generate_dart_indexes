@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.1.2]
+
+- Released @ 8/2024 (UTC)
+- chore: Update changelog sorting to use version instead of releasedAt
+
 ## [0.1.1]
 
 - Released @ 8/2024 (UTC)
