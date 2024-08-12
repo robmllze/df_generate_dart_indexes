@@ -9,7 +9,7 @@
 
 name: df_generate_dart_indexes
 description: A tool to generate index/exports files for all Dart files in a directory.
-version: 0.1.2
+version: 0.1.3
 repository: https://github.com/robmllze/df_generate_dart_indexes
 
 ## -----------------------------------------------------------------------------
@@ -21,9 +21,9 @@ environment:
 
 dependencies:
   args: ^2.5.0
-  df_config: ^0.1.2
-  df_gen_core: ^0.1.2
-  df_log: ^0.1.2
+  df_config: ">=0.1.0 <0.2.0"
+  df_gen_core: ">=0.1.0 <0.3.0"
+  df_log: ">=0.1.0 <0.2.0"
   path: ^1.9.0
 
 ## -----------------------------------------------------------------------------

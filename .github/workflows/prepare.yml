@@ -30,9 +30,6 @@ jobs:
       - name: Set up Dart
         uses: dart-lang/setup-dart@v1.2
 
-      - name: Upgrade dependencies
-        run: dart pub upgrade --tighten
-
       - name: Format Dart code
         run: dart format .
 
