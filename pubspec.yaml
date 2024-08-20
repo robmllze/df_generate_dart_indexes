@@ -1,29 +1,30 @@
 ##.title
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##
-## Dart/Flutter (DF) Packages by DevCetra.com & contributors. See LICENSE file
-## in root directory.
+## Dart/Flutter (DF) Packages by DevCetra.com & contributors. Use of this
+## source code is governed by an an MIT-style license that can be found in the
+## LICENSE file located in this project's root directory.
 ##
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##.title~
 
 name: df_generate_dart_indexes
 description: A tool to generate index/exports files for all Dart files in a directory.
-version: 0.1.4
+version: 0.1.5
 repository: https://github.com/robmllze/df_generate_dart_indexes
 
 ## -----------------------------------------------------------------------------
 
 environment:
-  sdk: ">=3.0.0 < 4.0.0"
+  sdk: ">=3.5.0 <4.0.0"
 
 ## -----------------------------------------------------------------------------
 
 dependencies:
   args: ^2.5.0
-  df_config: ^0.1.2
-  df_gen_core: ^0.2.3
-  df_log: ^0.1.2
+  df_config: ^0.2.0
+  df_gen_core: ^0.2.4
+  df_log: ^0.2.1
   path: ^1.9.0
 
 ## -----------------------------------------------------------------------------

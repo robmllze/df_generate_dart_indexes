@@ -1,8 +1,9 @@
 ##.title
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##
-## Dart/Flutter (DF) Packages by DevCetra.com & contributors. See LICENSE file
-## in root directory.
+## Dart/Flutter (DF) Packages by DevCetra.com & contributors. Use of this
+## source code is governed by an an MIT-style license that can be found in the
+## LICENSE file located in this project's root directory.
 ##
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##.title~
@@ -13,9 +14,11 @@ include: package:lints/recommended.yaml
 
 linter:
   rules:
-    always_declare_return_types: true
-    avoid_renaming_method_parameters: false
+    avoid_web_libraries_in_flutter: true
+    camel_case_types: false
     constant_identifier_names: false
+    file_names: false
+    library_private_types_in_public_api: false
     non_constant_identifier_names: false
     omit_local_variable_types: true
     prefer_const_constructors_in_immutables: true
@@ -24,14 +27,22 @@ linter:
     prefer_relative_imports: true
     prefer_single_quotes: true
     require_trailing_commas: true
-    unnecessary_this: false
-    camel_case_types: false
+    unnecessary_this: true
 
 analyzer:
   exclude:
     - build/**
-    #- '**/*.g.dart'
+
   errors:
+    always_declare_return_types: error
+    avoid_renaming_method_parameters: error
+    avoid_type_to_string: error
+    depend_on_referenced_packages: error
+    flutter_style_todos: error
+    invalid_use_of_protected_member: error
+    no_leading_underscores_for_local_identifiers: error
     prefer_final_in_for_each: error
+    prefer_relative_imports: error
     unnecessary_new: error
     unrelated_type_equality_checks: error
+    use_key_in_widget_constructors: error

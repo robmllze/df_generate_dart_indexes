@@ -1,8 +1,9 @@
 //.title
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
-// Dart/Flutter (DF) Packages by DevCetra.com & contributors. See LICENSE file
-// in root directory.
+// Dart/Flutter (DF) Packages by DevCetra.com & contributors. Use of this
+// source code is governed by an an MIT-style license that can be found in the
+// LICENSE file located in this project's root directory.
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
@@ -20,8 +21,7 @@ import 'generate_index_files_for_dart.dart';
 Future<void> runGenerateIndexFilesForDartApp(List<String> args) async {
   await gen.runCommandLineApp(
     title: 'Generate Dart Indexes',
-    description:
-        'A command line app for generating Dart index files for the provided directories.',
+    description: 'A command line app for generating Dart index files for the provided directories.',
     args: args,
     parser: ArgParser()
       ..addFlag(
@@ -91,11 +91,10 @@ class _ArgsChecker extends gen.ValidArgsChecker {
     required dynamic rootPaths,
     required dynamic subPaths,
     required dynamic pathPatterns,
-  })  : this.templatesRootDirPaths =
-            gen.splitArg(templatesRootDirPaths)?.toSet(),
-        this.rootPaths = gen.splitArg(rootPaths)?.toSet(),
-        this.subPaths = gen.splitArg(subPaths)?.toSet(),
-        this.pathPatterns = gen.splitArg(pathPatterns)?.toSet();
+  })  : templatesRootDirPaths = gen.splitArg(templatesRootDirPaths)?.toSet(),
+        rootPaths = gen.splitArg(rootPaths)?.toSet(),
+        subPaths = gen.splitArg(subPaths)?.toSet(),
+        pathPatterns = gen.splitArg(pathPatterns)?.toSet();
 
   //
   //
@@ -104,8 +103,8 @@ class _ArgsChecker extends gen.ValidArgsChecker {
   @override
   List get args => [
         //this.templatesRootDirPaths, // templates not used atm
-        this.rootPaths,
-        if (this.subPaths != null) this.subPaths,
-        if (this.pathPatterns != null) this.pathPatterns,
+        rootPaths,
+        if (subPaths != null) subPaths,
+        if (pathPatterns != null) pathPatterns,
       ];
 }
