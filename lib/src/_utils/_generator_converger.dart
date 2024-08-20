@@ -54,4 +54,5 @@ final generatorConverger = _GeneratorConverger(
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-typedef _GeneratorConverger = gen.GeneratorConverger<gen.DirInsight, Placeholders, String>;
+typedef _GeneratorConverger
+    = gen.GeneratorConverger<gen.DirInsight, Placeholders, String>;

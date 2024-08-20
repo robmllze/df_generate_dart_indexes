@@ -53,8 +53,8 @@ Future<void> generateIndexFilesForDart({
   );
 
   // Extract insights from the dir path results.
-  final dirInsights =
-      sourceFileExplorerResults.rootDirPathResults.map((e) => gen.DirInsight(dir: e));
+  final dirInsights = sourceFileExplorerResults.rootDirPathResults
+      .map((e) => gen.DirInsight(dir: e));
 
   // Converge what was gathered to generate the output.
   await generatorConverger.converge(
