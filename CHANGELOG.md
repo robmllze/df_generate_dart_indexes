@@ -4,6 +4,7 @@
 
 - Released @ 8/2024 (UTC)
 - breaking Change tool command to shorter genidx and enable generation options
+- chore: Update readme
 
 ## [0.1.5]
 
