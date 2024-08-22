@@ -11,20 +11,22 @@ Dart & Flutter Packages by DevCetra.com & contributors.
 
 ## Summary
 
-A tool to generate index/exports files for all Dart files in a directory.
+A tool to generate index/exports files also known as barrel files for all Dart files in a directory.
 
 ## Usage Instructions
 
 1. You do not need to add this package to your pubspec.yaml file.
 2. Activate the tool by running: `dart pub global activate df_generate_dart_indexes`.
 3. Navigate to a folder in your project using the terminal (Tip: If you're using VS Code, you can right-click on a folder and select `"Open in Integrated Terminal"`).
-4. Run `dartindexes .` to generate an `_index.g.dart` file at the current location `.`.
+4. Run `genidx -s .` or just ``genidx` to generate an `_index.g.dart` file at the current location `.`.
 
 ### Note:
 
 Files that start with an underscore, files in folders that start with an underscore, and generated files (those with the `.g.dart` extension) will be omitted from `_index.g.dart`.
 
 ### Generated File Example:
+
+The file barrel file will look something like this, and is generated from [this default template file](https://github.com/robmllze/df_generate_dart_indexes/blob/main/templates/template.dart.md): 
 
 ```dart
 //.title

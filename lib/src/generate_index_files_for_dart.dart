@@ -9,7 +9,6 @@
 //.title~
 
 import 'package:df_gen_core/df_gen_core.dart' as gen;
-import 'package:df_gen_core/df_gen_core.dart';
 import 'package:df_log/df_log.dart';
 
 import '_utils/_generator_converger.dart';
@@ -29,11 +28,10 @@ Future<void> generateIndexFilesForDart({
   required Set<String> rootDirPaths,
   Set<String> subDirPaths = const {},
   Set<String> pathPatterns = const {},
-  required Set<String> templatesRootDirPaths,
+  required String templatePath,
 }) async {
   // Notify start.
   debugLogStart('Starting generator. Please wait...');
-
   // Explore all source paths.
   final sourceFileExporer = gen.PathExplorer(
     dirPathGroups: {
@@ -46,15 +44,11 @@ Future<void> generateIndexFilesForDart({
   );
   final sourceFileExplorerResults = await sourceFileExporer.explore();
 
-  final template = await loadFileFromGitHub(
-    username: 'robmllze',
-    repo: 'df_generate_dart_indexes',
-    filePath: 'templates/template.dart.md',
-  );
+  final template = await gen.loadFileFromPathOrUrl(templatePath);
 
   // Extract insights from the dir path results.
-  final dirInsights = sourceFileExplorerResults.rootDirPathResults
-      .map((e) => gen.DirInsight(dir: e));
+  final dirInsights =
+      sourceFileExplorerResults.rootDirPathResults.map((e) => gen.DirInsight(dir: e));
 
   // Converge what was gathered to generate the output.
   await generatorConverger.converge(
