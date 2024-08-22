@@ -18,7 +18,7 @@ A tool to generate index/exports files also known as barrel files for all Dart f
 1. You do not need to add this package to your pubspec.yaml file.
 2. Activate the tool by running: `dart pub global activate df_generate_dart_indexes`.
 3. Navigate to a folder in your project using the terminal (Tip: If you're using VS Code, you can right-click on a folder and select `"Open in Integrated Terminal"`).
-4. Run `genidx -s .` or just ``genidx` to generate an `_index.g.dart` file at the current location `.`.
+4. Run `genidx -s .` or just `genidx` to generate an `_index.g.dart` file at the current location `.`.
 
 ### Note:
 

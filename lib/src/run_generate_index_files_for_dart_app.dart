@@ -24,7 +24,7 @@ Future<void> runGenerateIndexFilesForDartApp(List<String> args) async {
   await gen.runCommandLineApp(
     title: 'Generate Dart Indexes',
     description:
-        'A command line app for generating Dart index files for the provided directories.',
+        'A tool to generate index/exports files also known as barrel files for all Dart files in a directory.',
     args: args,
     parser: ArgParser()
       ..addFlag(
