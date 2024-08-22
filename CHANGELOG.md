@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.2.0]
+
+- Released @ 8/2024 (UTC)
+- breaking Change tool command to shorter genidx and enable generation options
+
 ## [0.1.5]
 
 - Released @ 8/2024 (UTC)

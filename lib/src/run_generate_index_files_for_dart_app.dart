@@ -23,7 +23,8 @@ import 'generate_index_files_for_dart.dart';
 Future<void> runGenerateIndexFilesForDartApp(List<String> args) async {
   await gen.runCommandLineApp(
     title: 'Generate Dart Indexes',
-    description: 'A command line app for generating Dart index files for the provided directories.',
+    description:
+        'A command line app for generating Dart index files for the provided directories.',
     args: args,
     parser: ArgParser()
       ..addFlag(
@@ -53,7 +54,8 @@ Future<void> runGenerateIndexFilesForDartApp(List<String> args) async {
         'template',
         abbr: 't',
         help: 'Template file path or URL.',
-        defaultsTo: 'https://raw.githubusercontent.com/robmllze/df_generate_dart_indexes/main/templates/template.dart.md',
+        defaultsTo:
+            'https://raw.githubusercontent.com/robmllze/df_generate_dart_indexes/main/templates/template.dart.md',
       ),
     onResults: (parser, results) {
       return _ArgsChecker(
