@@ -1,9 +1,11 @@
 //.title
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
-// Dart/Flutter (DF) Packages by DevCetra.com & contributors. Use of this
-// source code is governed by an an MIT-style license that can be found in the
-// LICENSE file located in this project's root directory.
+// Dart/Flutter (DF) Packages by DevCetra.com & contributors. The use of this
+// source code is governed by an MIT-style license described in the LICENSE
+// file located in this project's root directory.
+//
+// See: https://opensource.org/license/mit
 //
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
@@ -22,7 +24,7 @@ import 'generate_index_files_for_dart.dart';
 /// The [args] are interpreted and passed to [generateIndexFilesForDart].
 Future<void> runGenerateIndexFilesForDartApp(List<String> args) async {
   await gen.runCommandLineApp(
-    title: 'Generate Dart Indexes',
+    title: 'Generate Dart Indexes by DevCetra.com',
     description:
         'A tool to generate index/exports files also known as barrel files for all Dart files in a directory.',
     args: args,
@@ -62,7 +64,7 @@ Future<void> runGenerateIndexFilesForDartApp(List<String> args) async {
         rootPaths: results['roots'],
         subPaths: results['subs'],
         pathPatterns: results['patterns'],
-        templatePath: results['template'],
+        templatePath: results['template'] as String?,
       );
     },
     action: (parser, results, args) async {
@@ -106,7 +108,7 @@ class _ArgsChecker extends gen.ValidArgsChecker {
   //
 
   @override
-  List get args => [
+  List<dynamic> get args => [
         templatePath,
         rootPaths,
         if (subPaths != null) subPaths,

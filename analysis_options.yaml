@@ -1,9 +1,11 @@
 ##.title
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##
-## Dart/Flutter (DF) Packages by DevCetra.com & contributors. Use of this
-## source code is governed by an an MIT-style license that can be found in the
-## LICENSE file located in this project's root directory.
+## Dart/Flutter (DF) Packages by DevCetra.com & contributors. The use of this
+## source code is governed by an MIT-style license described in the LICENSE
+## file located in this project's root directory.
+##
+## See: https://opensource.org/license/mit
 ##
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##.title~
@@ -30,6 +32,10 @@ linter:
     unnecessary_this: true
 
 analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
   exclude:
     - build/**
 
@@ -40,6 +46,7 @@ analyzer:
     depend_on_referenced_packages: error
     flutter_style_todos: error
     invalid_use_of_protected_member: error
+    invalid_override_of_non_virtual_member: error
     no_leading_underscores_for_local_identifiers: error
     prefer_final_in_for_each: error
     prefer_relative_imports: error
