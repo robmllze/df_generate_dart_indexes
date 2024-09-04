@@ -46,14 +46,6 @@ git push -u origin main
 
 ## macOS and Linux
 
-### Fetching Generators
-
-```bash
-rm -rf ___generators/
-git clone https://github.com/robmllze/___generators.git
-dart pub get -C ___generators
-```
-
 ### Adding the Workflow
 
 ```bash
@@ -70,15 +62,6 @@ find . -name '.DS_Store' -type f -delete
 ```
 
 ## Windows
-
-### Fetching Generators
-
-```bash
-rmdir /s /q ___generators/
-git clone https://github.com/robmllze/___generators.git
-dart pub get -C ___generators
-rmdir /s /q ___generators/.git
-```
 
 ### Adding the Workflow
 
