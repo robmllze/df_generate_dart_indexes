@@ -48,7 +48,7 @@ final generatorConverger = _GeneratorConverger(
           output,
         );
 
-        debugLogSuccess('Generated "${gen.previewPath(outputFilePath)}"');
+        printGreen('Generated "${gen.previewPath(outputFilePath)}"');
       }
     }
   },
